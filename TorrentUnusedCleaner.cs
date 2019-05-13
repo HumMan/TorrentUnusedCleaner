@@ -107,6 +107,7 @@ namespace TorrentUnusedCleaner
 
             if (unused_torrens.Count > 0)
             {
+                File.WriteAllLines("unused_torrens.txt", unused_torrens);
                 var result = MessageBox.Show(String.Format("Found {0} unused torrents, move them to the recycle?", unused_torrens.Count), "Torrents cleanup", MessageBoxButtons.YesNo);
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
@@ -172,6 +173,7 @@ namespace TorrentUnusedCleaner
         {
             if (unused_files.Count > 0)
             {
+                File.WriteAllLines("unused_torrens.txt", unused_files);
                 var result = MessageBox.Show(String.Format("Found {0} unused files, move them to the recycle?", unused_files.Count), "Downloaded files cleanup", MessageBoxButtons.YesNo);
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
